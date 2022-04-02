@@ -14,12 +14,18 @@ variables:
   phpVersion: 7.4
 
 steps:
-- script: |
-    php -version
-  displayName: 'Use PHP version $(phpVersion)'
+#- script: |
+#    php -version
+#  displayName: 'Use PHP version $(phpVersion)'
 
-- script: composer install --no-interaction --prefer-dist
-  displayName: 'composer install'
+#- script: composer install --no-interaction --prefer-dist
+#  displayName: 'composer install'
+
+
+- task: PowerShell@2
+  inputs:
+    targetType: 'inline'
+    script: 'composer install'
 
 - task: ArchiveFiles@2
   displayName: ‘Archive files’
