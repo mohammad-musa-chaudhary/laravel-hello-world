@@ -30,10 +30,9 @@ steps:
       composer install
 
 - task: ArchiveFiles@2
-  displayName: ‘Archive files’
   inputs:
-    rootFolderOrFile: '$(Build.BinariesDirectory)'
-    includeRootFolder: true
+    rootFolderOrFile: '$(system.defaultWorkingDirectory)'
+    includeRootFolder: false
     archiveType: 'zip'
     archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
     replaceExistingArchive: true
