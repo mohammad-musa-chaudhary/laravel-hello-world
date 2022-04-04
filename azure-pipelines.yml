@@ -6,9 +6,8 @@
 trigger:
 - master
 
-pool:
-  name: default
-  vmImage: vm-dev-we-001
+pool: testPool
+
 
 variables:
   phpVersion: 7.4
